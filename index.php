@@ -1,13 +1,14 @@
-<?php
-//include function page
-include_once('lib/function.php');
+<!-- mecode ek dpuham error ekk display wenw login panal eke idla -->
+<!-- <?php
+        //include function page
+        include_once('lib/function.php');
 
-if(isset($_POST['btnSave'])){
-    //call function
-    $result = Authentication ($_POST['userName'],$_POST['userpass']);
-    echo($result);
-}
-?>
+        if (isset($_POST['btnSave'])) {
+            //call function
+            $result = Authentication($_POST['userName'], $_POST['userpass']);
+            echo ($result);
+        }
+        ?>  b -->
 
 
 

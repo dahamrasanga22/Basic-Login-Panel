@@ -1,5 +1,6 @@
 <?php
 
+
 //include db conection file
 include_once("db_conn.php");
 
@@ -63,34 +64,47 @@ function Authentication($userName, $useroass)
     $norow = mysqli_num_rows($sqlResult);
 
     //validating the number of records > 0 or not
-    if($norow > 0 ){
+    if ($norow > 0) {
         //fetch the user records
         $rec = mysqli_fetch_assoc($sqlResult);
 
         //validate psw
-        if($rec['login_psd'] = $newPassword){
+        if ($rec['login_psd'] = $newPassword) {
             //validate user login status
-            if($rec['login status']==1){
-                if($rec['login_role']=="admin"){
+            if ($rec['login status'] == 1) {
+                if ($rec['login_role'] == "admin") {
                     //redirect this user into the admin dashboard
                     header('location:lib\views\dashboards\admin.php');
-                }else{
+                } else {
                     //redirect this user into the admin dashboard
                     header('location:lib\views\dashboards\admin.php');
-
                 }
-            }else{
-                return("your acc has beed deactivated");
+            } else {
+                return ("your acc has beed deactivated");
             }
-
-        }else{
-            return("your pssword is not correct");
+        } else {
+            return ("your pssword is not correct");
         }
+    } else {
+        return ("no records are found!");
+    }
+}
+
+
+function empRegistration($empName, $empEmail, $empNic, $empTel, $empDob)
+{
+    $db_conn = connection();
+
+    $insert = "INSERT INTO emp_tbl(emp_name,emp_email,emp_nic,emp_tel,emp_dob)
+      VALUES('$empName,$empEmail,$empNic,$empTel,$empDob');";
+    $result = mysql_query(db_conn,insert);
+    if($result > 0 ){
+        return 1;
     }else{
-        return("no records are found!");
+        return 0;
     }
     
-
-
 }
+
+
 ?>
