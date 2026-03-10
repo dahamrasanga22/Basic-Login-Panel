@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg) no-repeat;
+    background-size: cover;
+    position: relative;
+    backdrop-filter: blur(3px);
+
+}
+
+
+
+
+
+.card {
+    position: relative;
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 213, 0.992);
+    overflow: hidden;  /*single line ekk witry ytin draw wennw */
+    backdrop-filter: blur(30px);
+
+}
+
+.card-header {
+    position: relative;
+    background: transparent;
+    border: 30px;
+    border-radius: 20%;
+    text-align: center;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 255, 213, 0.992);
+
+
+}

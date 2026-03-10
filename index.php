@@ -1,5 +1,5 @@
 <!-- mecode ek dpuham error ekk display wenw login panal eke idla -->
-<!-- <?php
+ <?php
         //include function page
         include_once('lib/function.php');
 
@@ -8,7 +8,7 @@
             $result = Authentication($_POST['userName'], $_POST['userpass']);
             echo ($result);
         }
-        ?>  b -->
+        ?>  
 
 
 
@@ -21,8 +21,9 @@
     <title>LMS</title>
 
     <!-- Link Boostrap -->
-    <link rel="stylesheet" href="CSS\bootstrap\css\bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
 
 </head>
 
@@ -97,6 +98,9 @@
     </div>
 
 
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 
 </body>
