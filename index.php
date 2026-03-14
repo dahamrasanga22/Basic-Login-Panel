@@ -1,15 +1,13 @@
-<!-- mecode ek dpuham error ekk display wenw login panal eke idla -->
- <?php
-        //include function page
-        include_once('lib/function.php');
+<?php
+//include function page
+include_once('lib\functions\userFunction.php');
 
-        if (isset($_POST['btnSave'])) {
-            //call function
-            $result = Authentication($_POST['userName'], $_POST['userpass']);
-            echo ($result);
-        }
-        ?>  
-
+if (isset($_POST['btnlogin'])) {
+    //call function
+    $result = Authentication($_POST['userName'], $_POST['userpass']);
+    echo ($result);
+}
+?>
 
 
 <!DOCTYPE html>
@@ -23,8 +21,6 @@
     <!-- Link Boostrap -->
     <link rel="stylesheet" href="css\bootstrap\css\bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body>

@@ -66,18 +66,16 @@
 
 <script>
     //pass the data to rote file
-    $('#btnSave').click(function(e) {
-        $.ajax({
-            url: "../../route/emp/register.php"
-            type: "POST",
-            data: $('#empRegistrationForm').serialize(),
-            success: function(date) {
-                if (data == '1') {
-                    alert('Success');
-                } else {
-                    alert('Error');
-                }
+    $.ajax({
+        url: "../../../route/emp/register.php",
+        type: "POST",
+        data: $('#empRegistrationForm').serialize(),
+        success: function(data) {
+            if (data == '1') {
+                alert('Success');
+            } else {
+                alert('Error');
             }
-        })
+        }
     });
 </script>

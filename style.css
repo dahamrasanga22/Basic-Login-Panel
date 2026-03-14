@@ -19,12 +19,7 @@ body {
     background-size: cover;
     position: relative;
     backdrop-filter: blur(3px);
-
 }
-
-
-
-
 
 .card {
     position: relative;
