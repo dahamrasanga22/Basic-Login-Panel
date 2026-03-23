@@ -27,25 +27,25 @@
                     </div>
                 </div>
 
+                
                 <form id="empRegistrationForm">
-
                     <div class="form-group">
-                        <input type="text" name="empName" class="form-control" placeholder="Enter EMP Name...">
+                        <input type="text" name="empName" id="userName" class="form-control" placeholder="Enter EMP Name..." >
                     </div>
                     <div class="form-group mt-2">
-                        <input type="email" name="empEmail" class="form-control" placeholder="Enter EMP Email...">
+                        <input type="email" name="empEmail" id="userEmail" class="form-control" placeholder="Enter EMP Email..." >
                     </div>
                     <div class="form-group mt-2">
-                        <input type="text" name="empNic" class="form-control" placeholder="Enter EMP NIC...">
+                        <input type="text" name="empNic" id="userNic" class="form-control" placeholder="Enter EMP NIC..." >
                     </div>
                     <div class="form-group mt-2">
-                        <input type="text" name="empTel" class="form-control" placeholder="Enter EMP Tel...">
+                        <input type="text" name="empTel" id="userPhone" class="form-control" placeholder="Enter EMP Tel..." >
                     </div>
                     <div class="form-group mt-2">
-                        <input type="date" name="empDob" class="form-control" placeholder="Enter EMP DOB...">
+                        <input type="date" name="empDob" id="userDob" class="form-control" placeholder="Enter EMP DOB...">
                     </div>
                     <div class="form-group mt-2">
-                        <input type="submit" name="btnSave" id="btnSave" class="btn btn-success">
+                        <input type="button" id="btnSave" class="btn btn-success" value="Submit">
                         <input type="reset" value="Clear" class="btn btn-danger">
                     </div>
                 </form>
@@ -62,20 +62,41 @@
 
 
 <!-- script -->
-<script src="../../../css/bootstrap/js/bootstrap.js"></script>
 
 <script>
-    //pass the data to rote file
-    $.ajax({
-        url: "../../../route/emp/register.php",
-        type: "POST",
-        data: $('#empRegistrationForm').serialize(),
-        success: function(data) {
-            if (data == '1') {
-                alert('Success');
-            } else {
-                alert('Error');
+$(document).ready(function() {
+    $('#btnSave').click(function(e) {
+        e.preventDefault(); 
+
+        var name  = $('#userName').val();
+        var email = $('#userEmail').val();
+        var nic   = $('#userNic').val();
+        var phone = $('#userPhone').val();
+        var dob   = $('#userDob').val();
+        var pass  = $('#userpass').val(); 
+
+        $.ajax({
+            method: "POST",
+            url: "../../route/user/emp/register.php", 
+            data: {
+                btnSave: 1,
+                userName: name,
+                userEmail: email,
+                userpass: pass,
+                userPhone: phone,
+                userNic: nic
+            },
+            success: function(response) {
+                console.log("Response:", response);
+                alert(response);
+                if (response.includes("Success")) {
+                    $('#empRegistrationForm')[0].reset();
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert("AJAX failed: " + textStatus);
             }
-        }
+        });
     });
+});
 </script>

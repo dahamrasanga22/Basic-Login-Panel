@@ -8,6 +8,8 @@ function userRegistration($userName, $userEmail, $userpass, $userPhone, $userNic
 {
     //create db connection
     $db_conn = connection();
+
+
     //create sql query
     $insertSql = "INSERT INTO user_tbl (user_name, user_email, user_phone, user_nic, user_status)VALUES ('$userName', '$userEmail', '$userPhone', '$userNic', 1)";
     $sqlResult = mysqli_query($db_conn, $insertSql);
@@ -20,9 +22,10 @@ function userRegistration($userName, $userEmail, $userpass, $userPhone, $userNic
         mysqli_query($db_conn, $insertLogin);
         return "Your Registration Success!!!";
     } else {
-        return "Please Try Again!!!";
+        return "Your Registration Failed!!!";
     }
 }
+
 
 
 
@@ -31,7 +34,7 @@ function Authentication($userName, $userpass)
 {
     //create db connection
     $db_conn = connection();
-    $sqlFetchUser = "SELECT * FROM login_tbl WHERE login_email='$userName';";
+    $sqlFetchUser = "SELECT * FROM login_tbl WHERE login_email='$userName'; ";
     $sqlResult = mysqli_query($db_conn, $sqlFetchUser);
 
     //convert user psw into a hash value
@@ -48,25 +51,28 @@ function Authentication($userName, $userpass)
 
         //validate psw
         if ($rec['login_pwd'] == $newPassword) {
-            //validate user login status
+
             if ($rec['login_status'] == 1) {
+
                 if ($rec['login_role'] == "admin") {
-                    //redirect this user into the admin dashboard
-                    header('location:lib\views\dashboards\admin.php');
+                    header('location:lib/views/dashboards/admin.php');
+                    exit();
                 } else {
-                    //redirect this user into the admin dashboard
-                    header('location:lib\views\dashboards\admin.php');
+                    header('location:lib/views/dashboards/user.php');
+                    exit();
                 }
             } else {
-                return ("Your acc has beed deactivated");
-            }
+                return ("Your account has been deactivated");
+            } 
         } else {
-            return ("your pAssword is not correct");
+            return ("Your password is not correct");
         }
     } else {
         return ("No records are found!");
     }
 }
+
+
 
 
 function empRegistration($empName, $empEmail, $empNic, $empTel, $empDob)
@@ -78,6 +84,17 @@ function empRegistration($empName, $empEmail, $empNic, $empTel, $empDob)
         return 1;
     } else {
         return 0;
+    }
+}
+
+
+function deleteUser($id) {
+    $db_conn = connection();
+    $sql = "DELETE FROM emp_tbl WHERE emp_id = '$id'"; 
+    if(mysqli_query($db_conn, $sql)) {
+        return "Employee Deleted Successfully";
+    } else {
+        return "Delete Failed: " . mysqli_error($db_conn);
     }
 }
 

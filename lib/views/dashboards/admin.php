@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../../../css/bootstrap/css/bootstrap.min.css">
 </head>
 
@@ -18,9 +18,14 @@
             <div class="card-header">
                 <a href="../emp/addEmp.php" class="btn btn-success" style="width:50%">Add Emp</a>
             </div>
+            <div class="card-header">
+                <a href="../emp/manageEmp.php" class="btn btn-danger" style="width:50%">Manage Emp</a>
+            </div>
             <div class="cod-md-6"></div>
         </div>
     </div>
+
+
 
 
 

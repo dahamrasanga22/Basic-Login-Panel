@@ -7,6 +7,7 @@ function connection()
     $password = ""; //psw
     $db_name = "ums";  //db name
 
+    
     //create db conection
     $conn = mysqli_connect($server, $user, $password, $db_name);
 
@@ -16,4 +17,7 @@ function connection()
         return ($conn);
     }
 }
+
+
+
 ?>

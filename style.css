@@ -1,3 +1,16 @@
+CSS Variables:root {
+    --electric-border-color: #00fffb;
+    --electric-light-color: oklch(from var(--electric-border-color) l c h);
+    --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
+    --color-neutral-900: oklch(0.185 0 0);
+    --electric-border-color1: #f2ff00;
+    --electric-light-color1: oklch(from var(--electric-border-color1) l c h);
+    --gradient-color1: oklch(from var(--electric-border-color1) 0.3 calc(c / 2) h / 0.4);
+    --color-neutral-9001: oklch(0.185 0 0);
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -14,21 +27,20 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    padding: 20px;
     background: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg) no-repeat;
-    background-size: cover;
     position: relative;
     backdrop-filter: blur(3px);
 }
+
 
 .card {
     position: relative;
     background: transparent;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 255, 213, 0.992);
-    overflow: hidden;  /*single line ekk witry ytin draw wennw */
+    overflow: hidden;
+    /*single line ekk witry ytin draw wennw */
     backdrop-filter: blur(30px);
-
 }
 
 .card-header {
