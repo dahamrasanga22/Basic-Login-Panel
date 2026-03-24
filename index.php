@@ -10,6 +10,7 @@ if (isset($_POST['btnlogin'])) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +20,7 @@ if (isset($_POST['btnlogin'])) {
     <title>LMS Login Panel</title>
     <!-- Link Boostrap / css -->
     <link rel="stylesheet" href="css\bootstrap\css\bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <div class="container" style="margin-top: 40px;">

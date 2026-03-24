@@ -7,9 +7,7 @@ if(isset($_POST['userName'])){
     $nic   = $_POST['userNic'];
     $phone = $_POST['userPhone'];
     
-    // userDob කියන key එක තියෙනවාද කියලා පරීක්ෂා කරනවා (Warning එක නතර කිරීමට)
     $dob   = isset($_POST['userDob']) ? $_POST['userDob'] : ""; 
-
     $res = empRegistration($name, $email, $nic, $phone, $dob);
     
     if($res == 1){
