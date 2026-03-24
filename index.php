@@ -20,8 +20,10 @@ if (isset($_POST['btnlogin'])) {
     <title>LMS Login Panel</title>
     <!-- Link Boostrap / css -->
     <link rel="stylesheet" href="css\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
     <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
+
 <body>
     <div class="container" style="margin-top: 40px;">
         <div class="row">
@@ -34,11 +36,11 @@ if (isset($_POST['btnlogin'])) {
                         <form action="lib\views\dashboards\admin.php" method="post">
                             <div class="form-group mt-3" style="color: white;">
                                 <label for="username">Enter Your Username</label>
-                                <input type="text" name="userName" id="username" class="form-control" >
+                                <input type="text" name="userName" id="username" class="form-control">
                             </div>
                             <div class="form-group mt-3" style="color: white;">
                                 <label for="password">Enter Your Password</label>
-                                <input type="password" name="userpass" id="password" class="form-control" >
+                                <input type="password" name="userpass" id="password" class="form-control">
                             </div>
                             <div class="form-group mt-3" style="color: white;">
                                 <input type="submit" value="Login" name="btnlogin" class="btn btn-primary">
@@ -48,7 +50,6 @@ if (isset($_POST['btnlogin'])) {
                 </div>
             </div>
 
-            
             <div class="col-md-6">
                 <div class="card" style="background-color: rgba(0,0,0,0.4);padding-bottom: 150x;">
                     <div class="card-header" style="color: white;">
@@ -58,23 +59,23 @@ if (isset($_POST['btnlogin'])) {
                         <form action="lib/route/user/registration.php" method="post">
                             <div class="form-group mt-3" style="color: white;">
                                 <label for="userName">Enter Your Name</label>
-                                <input type="text" name="userName" id="userName" class="form-control" >
+                                <input type="text" name="userName" id="userName" class="form-control">
                             </div>
                             <div class="form-group-3" style="color: white;">
                                 <label for="userEmail">Enter Your Email</label>
-                                <input type="text" name="userEmail" id="userEmail" class="form-control" >
+                                <input type="text" name="userEmail" id="userEmail" class="form-control">
                             </div>
                             <div class="form-group mt-3" style="color: white;">
                                 <label for="password">Enter Your Password</label>
-                                <input type="password" name="userpass" id="userpass" class="form-control" >
+                                <input type="password" name="userpass" id="userpass" class="form-control">
                             </div>
                             <div class="form-group mt-3" style="color: white;">
                                 <label for="phone">Enter Your Phone</label>
-                                <input type="text" name="userPhone" id="userPhone" class="form-control" >
+                                <input type="text" name="userPhone" id="userPhone" class="form-control">
                             </div>
                             <div class="form-group mt-3" style="color: white;">
                                 <label for="nic">Enter Your NIC</label>
-                                <input type="text" name="userNic" id="userNic" class="form-control" >
+                                <input type="text" name="userNic" id="userNic" class="form-control">
                             </div>
                             <div class="form-group mt-3" style="color: white;">
                                 <input type="submit" name="btnSave" value="Register" class="btn btn-success">
@@ -88,8 +89,10 @@ if (isset($_POST['btnlogin'])) {
         </div>
     </div>
 
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>

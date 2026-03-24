@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* Animated background effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="45" cy="85" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="95" cy="75" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Main Card Container */
+.emp-card {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emp-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Header Section */
+.card-header-custom {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 28px 32px;
+    border-bottom: 4px solid #f97316;
+    position: relative;
+}
+
+.card-header-custom h2 {
+    color: white;
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-header-custom h2 i {
+    color: #f97316;
+    font-size: 2rem;
+}
+
+.header-badge {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(249, 115, 22, 0.2);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    color: #f97316;
+    font-weight: 500;
+}
+
+/* Form Body */
+.card-body-custom {
+    padding: 32px 36px;
+}
+
+/* Form Groups */
+.form-group-modern {
+    margin-bottom: 24px;
+}
+
+.input-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-label i {
+    color: #f97316;
+    width: 20px;
+    font-size: 0.9rem;
+}
+
+.required-star {
+    color: #ef4444;
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+/* Modern Input Fields */
+.modern-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background: #fefefe;
+    font-weight: 500;
+}
+
+.modern-input:focus {
+    border-color: #f97316;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+    background: white;
+}
+
+.modern-input.is-invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.invalid-feedback-custom {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 6px;
+    display: none;
+    align-items: center;
+    gap: 4px;
+}
+
+.invalid-feedback-custom i {
+    font-size: 0.7rem;
+}
+
+/* Button Styles */
+.btn-group-custom {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+}
+
+.btn-clear {
+    background: white;
+    border: 2px solid #e2e8f0;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-clear:hover {
+    border-color: #f97316;
+    color: #f97316;
+    background: #fff7ed;
+    transform: translateY(-2px);
+}
+
+/* Alert Messages */
+.alert-custom {
+    border-radius: 20px;
+    padding: 14px 20px;
+    margin-bottom: 24px;
+    border-left: 5px solid;
+    font-weight: 500;
+    animation: slideIn 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: #f0fdf4;
+    border-left-color: #22c55e;
+    color: #166534;
+}
+
+.alert-error {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+    color: #991b1b;
+}
+
+/* Info Note */
+.info-note {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 12px 18px;
+    margin-top: 24px;
+    font-size: 0.75rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.info-note i {
+    color: #f97316;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-body-custom {
+        padding: 24px;
+    }
+
+    .card-header-custom h2 {
+        font-size: 1.4rem;
+    }
+
+    .header-badge {
+        display: none;
+    }
+
+    .btn-group-custom {
+        flex-direction: column;
+    }
+
+    .btn-submit,
+    .btn-clear {
+        width: 100%;
+    }
+}
+
+/* Loading Spinner */
+.spinner-btn {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
